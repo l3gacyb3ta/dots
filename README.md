@@ -13,4 +13,4 @@ COMMANDS:
   copy                 copies all dots to the config dir for backup
   write                copies the backups back to their respective locations
   ls                   list all dots
-``
+```
