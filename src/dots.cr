@@ -91,7 +91,7 @@ if ARGV[0]? == "write"
 end
 
 help_msg = "Usage:
-  manager [commands] <arguments>
+  dots [commands] <arguments>
 
 COMMANDS:
   add <path to file>   adds the file to the dots config

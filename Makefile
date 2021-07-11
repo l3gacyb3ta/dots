@@ -1,2 +1,5 @@
 build:
-	shards build manager -p
+	shards build dots -p --release
+
+install: build
+	cp bin/dots /usr/local/bin/dots
