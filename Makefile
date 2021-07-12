@@ -3,3 +3,6 @@ build:
 
 install: build
 	cp bin/dots /usr/local/bin/dots
+
+dev:
+	shards build dots -p 

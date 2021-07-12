@@ -1,5 +1,6 @@
 require "json"
 require "file_utils"
+require "git"
 
 CONFIG_DIR = ENV["HOME"] + "/.config/dot-manager/"
 
@@ -75,6 +76,11 @@ if ARGV[0]? == "copy"
             FileUtils.cp dot["loc"].to_s, CONFIG_DIR + dot["name"].to_s + "/" + filename
         end
     end
+
+    if ARGV[1]? == "c"
+        commit CONFIG_DIR, "commited at now"
+    end
+
     exit
 end
 
