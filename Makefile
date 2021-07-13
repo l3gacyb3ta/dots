@@ -6,3 +6,6 @@ install: build
 
 dev:
 	shards build dots -p 
+
+installdev: dev
+	cp bin/dots /usr/local/bin/dots

@@ -2,7 +2,7 @@ require "json"
 require "file_utils"
 require "git"
 
-CONFIG_DIR = ENV["HOME"] + "/.config/dot-manager/"
+CONFIG_DIR = ENV["HOME"] + "/.config/dots/"
 
 DOTS_FILE_LOCATION = CONFIG_DIR + "dots.json"
 
@@ -66,7 +66,7 @@ if ARGV[0]? == "copy"
         # Get the filename for the loc
         filename = Path[dot["loc"]].parts.last
 
-        puts "Copying #{dot["name"]} file to ~/.config/dot-manager/#{dot["name"]}/#{filename} "
+        puts "Copying #{dot["name"]} file to ~/.config/dots/#{dot["name"]}/#{filename} "
 
         # Create the folder if it doesnt exist, and then copy
         if Dir.exists? CONFIG_DIR + dot["name"].to_s
@@ -101,7 +101,7 @@ help_msg = "Usage:
 
 COMMANDS:
   add <path to file>   adds the file to the dots config
-  copy                 copies all dots to the config dir for backup
+  copy [c]             copies all dots to the config dir for backup, if c is added, commit and push
   write                copies the backups back to their respective locations
   ls                   list all dots
 "
