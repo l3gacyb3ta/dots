@@ -42,7 +42,7 @@ if ARGV[0]? == "add"
     name = gets.not_nil!
     
     # Expand the path
-    loc = Path.posix(ARGV[1]).expand 
+    loc = Path[ARGV[1]].expand 
 
     # Build out data structure
     new_dot = { "name" => name, "loc" => loc }
@@ -93,6 +93,7 @@ if ARGV[0]? == "write"
 
         FileUtils.cp CONFIG_DIR + dot["name"].to_s + "/" + filename, dot["loc"].to_s
     end
+    
     exit
 end
 
